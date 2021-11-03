@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  overflow-x: hidden;
+  margin: unset;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.o-container {
+  width: 65%;
+  align-items: center;
+  margin: 120px auto;
+}
+
+.e-containerHeader {
+  text-align: right;
+  background: #f5f5f5;
+  padding: 15px;
+}
+
+.c-gridContainer {
+  display: flex;
+  align-items: flex-end;
+  direction: rtl;
+}
+
+/*input base component*/
+.c-inputGroup {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  text-align: right;
+  width: 100%;
+}
+
+.c-inputGroup > .o-inputContainer {
+  position: relative;
+  height: 56px;
+}
+
+.c-inputGroup > .inputLabel,
+.c-inputGroup > .o-inputContainer > .e-inputIcon,
+.c-inputGroup > .e-inputCaption,
+.c-inputGroup > .o-inputContainer > .e-innerLabel {
+  display: none;
+}
+
+.c-inputGroup.has-Label > .inputLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: #74789c;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+:host-context([label]) > .c-inputGroup > .o-inputContainer,
+.c-inputGroup.has-InnerLabelS > .o-inputContainer {
+  height: 38px;
+}
+
+.c-inputGroup > .o-inputContainer > ::ng-deep input {
+  padding: 0 16px 0 16px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ededf2;
+  border-radius: 5px;
+  color: #3f4476;
+  background: #fff;
+  outline: none;
+  font-size: 12px;
+}
+
+.c-inputGroup > .o-inputContainer > ::ng-deep input[disabled],
+.c-inputGroup > .o-inputContainer > ::ng-deep input:disabled {
+  border: solid 1px #ededf2;
+  background-color: #f6f6f9;
+  cursor: not-allowed;
+  color: #9a9db7;
+}
+
+.c-inputGroup > .o-inputContainer > ::ng-deep input[placeholder]::placeholder {
+  color: #adb0c5;
+}
+
+:host-context([inline-icon=true]) > .c-inputGroup > .o-inputContainer > ::ng-deep input,
+:host-context([state=error]) > .c-inputGroup.has-Icon.is-Success > .o-inputContainer > ::ng-deep input,
+:host-context([staten=success]) > .c-inputGroup.has-Icon.has-Error > .o-inputContainer > ::ng-deep input,
+:host-context([state=warning]).c-inputGroup.has-Icon.has-Warning > .o-inputContainer > ::ng-deep input {
+  padding: 0 48px 0 48px;
+}
+
+.c-inputGroup.has-InnerLabelM > .o-inputContainer > ::ng-deep input,
+.c-inputGroup.has-InnerLabelS > .o-inputContainer > ::ng-deep input {
+  direction: ltr;
+  text-align: left;
+  font-size: 16px;
+}
+
+.c-inputGroup > .o-inputContainer > .e-inputIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  display: block;
+}
+
+.c-inputGroup > .o-inputContainer > .e-successIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  display: block;
+}
+
+.c-inputGroup > .o-inputContainer > .e-errorIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  display: block;
+}
+
+.c-inputGroup > .o-inputContainer > .e-warningIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  display: block;
+}
+
+.c-inputGroup.has-Error > .e-inputCaption,
+.c-inputGroup.has-Warning > .e-inputCaption,
+.c-inputGroup.has-NumberDsc > .e-inputCaption {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.c-inputGroup.has-Warning > .e-inputCaption {
+  color: #eac300;
+}
+
+:host-context([state=error]) > .c-inputGroup > .e-inputCaption {
+  color: #ea0070;
+}
+
+.c-inputGroup.has-NumberDsc > .e-inputCaption {
+  color: #006dea;
+}
+
+.c-inputGroup.has-InnerLabelM > .o-inputContainer > .e-innerLabel,
+.c-inputGroup.has-InnerLabelS > .o-inputContainer > .e-innerLabel {
+  display: block;
+  top: 50%;
+  right: 16px;
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.c-inputGroup.has-InnerLabelS > .o-inputContainer > .e-innerLabel {
+  color: #adb0c5;
+}
+
+.c-inputGroup > .o-inputContainer > ::ng-deep input:focus-visible,
+.c-inputGroup > .o-inputWrapper > ::ng-deep input:focus,
+.c-inputGroup > .o-inputWrapper > ::ng-deep input:active {
+  box-shadow: 0 1px 6px 0 rgba(102, 89, 255, 0.2);
+  outline: none;
+  border: solid 1px #6659ff;
+}
+
+:host-context([state=error]) > .c-inputGroup > .o-inputContainer > ::ng-deep input:focus {
+  border: 1px solid #ea0070;
+  outline: none;
+}
+
+:host-context([state=warning]) > .c-inputGroup > .o-inputContainer > ::ng-deep input:focus {
+  border-color: #eac300;
+}
+
+/*
+number input
+*/
+
+/*# sourceMappingURL=ck-input-text.component.css.map */
