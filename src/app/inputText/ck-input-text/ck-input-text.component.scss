@@ -4,7 +4,6 @@ $--main-dark-gray: #3f4476;
 $--main-error-red: #ea0070;
 $--main-warning-yellow: #eac300;
 
-
 * {
   box-sizing: border-box;
 }
@@ -21,7 +20,6 @@ body {
   width: 65%;
   align-items: center;
   margin: 120px auto;
-
 }
 
 .e-containerHeader {
@@ -34,7 +32,6 @@ body {
   display: flex;
   align-items: flex-end;
   direction: rtl;
-
 }
 
 /*input base component*/
@@ -51,11 +48,8 @@ body {
   height: 56px;
 }
 
-
 .c-inputGroup > .inputLabel,
-.c-inputGroup > .o-inputContainer > .e-inputIcon,
-.c-inputGroup > .e-inputCaption,
-.c-inputGroup > .o-inputContainer > .e-innerLabel {
+.c-inputGroup > .o-inputContainer > .e-inputIcon {
   display: none;
 }
 
@@ -67,11 +61,10 @@ body {
   font-size: 12px;
 }
 
-:host-context([label]) > .c-inputGroup > .o-inputContainer,
-.c-inputGroup.has-InnerLabelS > .o-inputContainer {
+:host-context([labelPos="in"]) > .c-inputGroup > .o-inputContainer,
+.c-inputGroup > .o-inputContainer {
   height: 38px;
 }
-
 
 .c-inputGroup > .o-inputContainer > ::ng-deep input {
   padding: 0 16px 0 16px;
@@ -101,18 +94,15 @@ body {
 :host-context([inline-icon="true"]) > .c-inputGroup > .o-inputContainer > ::ng-deep input,
 :host-context([state="error"]) > .c-inputGroup.has-Icon.is-Success > .o-inputContainer > ::ng-deep input,
 :host-context([staten="success"]) > .c-inputGroup.has-Icon.has-Error > .o-inputContainer > ::ng-deep input,
-:host-context([state="warning"]).c-inputGroup.has-Icon.has-Warning > .o-inputContainer > ::ng-deep input {
+:host-context([state="warning"]) > .c-inputGroup.has-Icon.has-Warning > .o-inputContainer > ::ng-deep input {
   padding: 0 48px 0 48px;
 }
 
-.c-inputGroup.has-InnerLabelM > .o-inputContainer > ::ng-deep input,
-.c-inputGroup.has-InnerLabelS > .o-inputContainer > ::ng-deep input {
+:host-context([labelPos="in"]) > .c-inputGroup > .o-inputContainer > ::ng-deep input {
   direction: ltr;
   text-align: left;
   font-size: 16px;
-
 }
-
 
 .c-inputGroup > .o-inputContainer > .e-inputIcon {
   width: 24px;
@@ -123,7 +113,6 @@ body {
   transform: translateY(-50%);
   right: 16px;
   display: block;
-
 }
 
 .c-inputGroup > .o-inputContainer > .e-successIcon {
@@ -135,7 +124,6 @@ body {
   transform: translateY(-50%);
   left: 16px;
   display: block;
-
 }
 
 .c-inputGroup > .o-inputContainer > .e-errorIcon {
@@ -147,7 +135,6 @@ body {
   transform: translateY(-50%);
   left: 16px;
   display: block;
-
 }
 
 .c-inputGroup > .o-inputContainer > .e-warningIcon {
@@ -159,11 +146,10 @@ body {
   transform: translateY(-50%);
   left: 16px;
   display: block;
-
 }
 
-.c-inputGroup.has-Error > .e-inputCaption,
-.c-inputGroup.has-Warning > .e-inputCaption,
+:host-context([state="error"]) > .c-inputGroup > .e-inputCaption,
+:host-context([state="warning"]) > .c-inputGroup > .e-inputCaption,
 .c-inputGroup.has-NumberDsc > .e-inputCaption {
   display: block;
   margin-top: 4px;
@@ -171,7 +157,7 @@ body {
   font-weight: normal;
 }
 
-.c-inputGroup.has-Warning > .e-inputCaption {
+:host-context([state="warning"]) > .c-inputGroup > .e-inputCaption {
   color: $--main-warning-yellow;
 }
 
@@ -183,8 +169,7 @@ body {
   color: #006dea;
 }
 
-.c-inputGroup.has-InnerLabelM > .o-inputContainer > .e-innerLabel,
-.c-inputGroup.has-InnerLabelS > .o-inputContainer > .e-innerLabel {
+.c-inputGroup > .o-inputContainer > .e-innerLabel {
   display: block;
   top: 50%;
   right: 16px;
@@ -193,10 +178,9 @@ body {
   font-size: 16px;
 }
 
-.c-inputGroup.has-InnerLabelS > .o-inputContainer > .e-innerLabel {
+.c-inputGroup > .o-inputContainer > .e-innerLabel {
   color: #adb0c5;
 }
-
 
 .c-inputGroup > .o-inputContainer > ::ng-deep input:focus-visible,
 .c-inputGroup > .o-inputWrapper > ::ng-deep input:focus,
@@ -218,5 +202,3 @@ body {
 /*
 number input
 */
-
-
