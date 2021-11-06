@@ -3,9 +3,22 @@
 }
 
 .o-container {
-  width: 65%;
+  width: 85%;
   align-items: center;
   margin: 120px auto;
+}
+
+.e-containerHeader {
+  text-align: right;
+  background: #f5f5f5;
+  padding: 15px;
+}
+
+.c-gridContainer {
+  display: flex;
+  align-items: flex-end;
+  direction: rtl;
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=app.component.css.map */

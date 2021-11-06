@@ -43,9 +43,7 @@ body {
 }
 
 .c-inputGroup > .inputLabel,
-.c-inputGroup > .o-inputContainer > .e-inputIcon,
-.c-inputGroup > .e-inputCaption,
-.c-inputGroup > .o-inputContainer > .e-innerLabel {
+.c-inputGroup > .o-inputContainer > .e-inputIcon {
   display: none;
 }
 
@@ -57,8 +55,7 @@ body {
   font-size: 12px;
 }
 
-:host-context([label]) > .c-inputGroup > .o-inputContainer,
-.c-inputGroup.has-InnerLabelS > .o-inputContainer {
+:host-context.has-icon > .c-inputGroup > .o-inputContainer {
   height: 38px;
 }
 
@@ -75,27 +72,29 @@ body {
   font-size: 12px;
 }
 
-.c-inputGroup > .o-inputContainer > ::ng-deep input[disabled],
-.c-inputGroup > .o-inputContainer > ::ng-deep input:disabled {
+:host-context(.disabled) > .c-inputGroup > .o-inputContainer > ::ng-deep input {
   border: solid 1px #ededf2;
   background-color: #f6f6f9;
   cursor: not-allowed;
   color: #9a9db7;
 }
 
+:host-context(.disabled) > .c-inputGroup > .o-inputContainer > .e-inputIcon {
+  cursor: not-allowed;
+}
+
 .c-inputGroup > .o-inputContainer > ::ng-deep input[placeholder]::placeholder {
   color: #adb0c5;
 }
 
-:host-context([inline-icon=true]) > .c-inputGroup > .o-inputContainer > ::ng-deep input,
+:host-context.has-icon > .c-inputGroup > .o-inputContainer > ::ng-deep input,
 :host-context([state=error]) > .c-inputGroup.has-Icon.is-Success > .o-inputContainer > ::ng-deep input,
 :host-context([staten=success]) > .c-inputGroup.has-Icon.has-Error > .o-inputContainer > ::ng-deep input,
-:host-context([state=warning]).c-inputGroup.has-Icon.has-Warning > .o-inputContainer > ::ng-deep input {
+:host-context([state=warning]) > .c-inputGroup.has-Icon.has-Warning > .o-inputContainer > ::ng-deep input {
   padding: 0 48px 0 48px;
 }
 
-.c-inputGroup.has-InnerLabelM > .o-inputContainer > ::ng-deep input,
-.c-inputGroup.has-InnerLabelS > .o-inputContainer > ::ng-deep input {
+:host-context.has-innerLabel > .c-inputGroup > .o-inputContainer > ::ng-deep input {
   direction: ltr;
   text-align: left;
   font-size: 16px;
@@ -145,8 +144,8 @@ body {
   display: block;
 }
 
-.c-inputGroup.has-Error > .e-inputCaption,
-.c-inputGroup.has-Warning > .e-inputCaption,
+:host-context([state=error]) > .c-inputGroup > .e-inputCaption,
+:host-context([state=warning]) > .c-inputGroup > .e-inputCaption,
 .c-inputGroup.has-NumberDsc > .e-inputCaption {
   display: block;
   margin-top: 4px;
@@ -154,7 +153,7 @@ body {
   font-weight: normal;
 }
 
-.c-inputGroup.has-Warning > .e-inputCaption {
+:host-context([state=warning]) > .c-inputGroup > .e-inputCaption {
   color: #eac300;
 }
 
@@ -166,8 +165,7 @@ body {
   color: #006dea;
 }
 
-.c-inputGroup.has-InnerLabelM > .o-inputContainer > .e-innerLabel,
-.c-inputGroup.has-InnerLabelS > .o-inputContainer > .e-innerLabel {
+.c-inputGroup > .o-inputContainer > .e-innerLabel {
   display: block;
   top: 50%;
   right: 16px;
@@ -176,7 +174,7 @@ body {
   font-size: 16px;
 }
 
-.c-inputGroup.has-InnerLabelS > .o-inputContainer > .e-innerLabel {
+.c-inputGroup > .o-inputContainer > .e-innerLabel {
   color: #adb0c5;
 }
 
@@ -195,6 +193,18 @@ body {
 
 :host-context([state=warning]) > .c-inputGroup > .o-inputContainer > ::ng-deep input:focus {
   border-color: #eac300;
+}
+
+.c-inputGroup > .o-inputContainer > .e-errorIcon svg path {
+  fill: #ea0070;
+}
+
+.c-inputGroup > .o-inputContainer > .e-warningIcon svg path {
+  fill: #eac300;
+}
+
+.c-inputGroup > .o-inputContainer > .e-successIcon svg path {
+  fill: green;
 }
 
 /*

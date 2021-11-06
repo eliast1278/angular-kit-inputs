@@ -1,4 +1,4 @@
-import {Component, Directive, Input, OnInit, ViewChild, AfterViewInit, ElementRef} from "@angular/core";
+import {Component, ElementRef, HostBinding, Input, ViewChild} from "@angular/core";
 
 @Component({
   selector: "c-k-input-text",
@@ -6,32 +6,36 @@ import {Component, Directive, Input, OnInit, ViewChild, AfterViewInit, ElementRe
   styleUrls: ['ck-input-text.component.scss'],
 
 })
-export class CkInputTextComponent implements OnInit, AfterViewInit {
-  ngOnInit() {
-    console.log(this.inlineIcon)
+
+export class CkInputTextComponent {
+  constructor() {
+    this.randomStr()
   }
 
   @Input() id: string = 'reza';
   @Input() label: string = "";
-  @Input() labelPos: "in" | "out" = "out";
-  @Input() inlineIcon: boolean = false;
+
   @Input() state: "regular" | "success" | "error" | "warning" = "regular";
-  @Input() valueAlignment: "right" | "left" = "right";
+  // @Input() valueAlignment: "right" | "left" = "right";
   @Input() placeholder: string | null = null;
-  @Input() disabled: boolean = false;
+
+  @HostBinding('class.has-icon') @Input() inlineIcon: boolean = false;
+  @HostBinding('class.disabled') @Input() disabled: boolean = false;
+  @HostBinding('class.has-innerLabel') @Input() labelPos: "in" | "out" = "out";
 
   @ViewChild("container")
   set containerElement(v: ElementRef) {
-    if(v?.nativeElement.getElementsByTagName("input")){
-    v.nativeElement.getElementsByTagName("input")[0].id =this.id;
-
+    if (v?.nativeElement.getElementsByTagName("input")) {
+      v.nativeElement.getElementsByTagName("input")[0].id = this.id;
+      if (this.disabled) {
+        v.nativeElement.getElementsByTagName("input")[0].disabled = true
+      }
     }
   }
 
-
-  ngAfterViewInit() {
-    console.log('Values on ngAfterViewInit():');
-
+  randomStr() {
+    this.id = Math.random().toString(36).substr(2, 9);
   }
+
 
 }

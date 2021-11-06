@@ -1,5 +1,65 @@
 <div class="o-container">
-  <c-k-input-text state="regular" label="test" [inlineIcon]=false labelPos="in">
-    <input type="text" placeholder="this is place holder" />
-  </c-k-input-text>
+  <h3 class="e-containerHeader">simple input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+    <c-k-input-text label="test" [inlineIcon]="true">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+  </section>
+  <h3 class="e-containerHeader">success input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test" [state]="'success'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+    <c-k-input-text label="test" [inlineIcon]="true" [state]="'success'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+  </section>
+  <h3 class="e-containerHeader">error input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test" [state]="'error'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+    <c-k-input-text label="test" [inlineIcon]="true" [state]="'error'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+  </section>
+  <h3 class="e-containerHeader">warning input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test" [state]="'warning'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+    <c-k-input-text label="test" [inlineIcon]="true" [state]="'warning'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+  </section>
+  <h3 class="e-containerHeader">warning input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test" [state]="'warning'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+    <c-k-input-text label="test" [inlineIcon]="true" [state]="'warning'">
+      <input type="text" placeholder="this is place holder"/>
+    </c-k-input-text>
+  </section>
+  <h3 class="e-containerHeader">disabled input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test" [disabled]="true">
+      <input type="text"  placeholder="this is place holder"/>
+    </c-k-input-text>
+    <c-k-input-text label="test" [inlineIcon]="true" [disabled]="true">
+      <input type="text" />
+    </c-k-input-text>
+  </section>
+  <h3 class="e-containerHeader">innerLabeled input</h3>
+  <section class="c-gridContainer">
+    <c-k-input-text label="test" [labelPos]="'in'">
+      <input type="text" />
+    </c-k-input-text>
+    <c-k-input-text label="test" [labelPos]="'in'" >
+      <input type="text"  />
+    </c-k-input-text>
+  </section>
 </div>
